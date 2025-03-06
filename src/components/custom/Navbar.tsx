@@ -11,7 +11,7 @@ const Navbar = () => {
         <div>
           <img className="w-40" src={mainlogo} alt="" />
         </div>
-        <div className="border border-solid border-gray-200 rounded-lg p-1 flex items-center gap-3">
+        <div className="border border-solid border-gray-100 rounded-lg p-1 flex items-center gap-3">
           <h6 className="text-lg font-semibold">$ 0</h6>
           <img className="w-12 aspect-square" src={mitb} alt="" />
         </div>

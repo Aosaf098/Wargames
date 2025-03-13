@@ -1,6 +1,6 @@
-import Hero from "@/components/custom/Hero";
+import Hero from "@/components/custom/Banner/Hero";
 import Navbar from "@/components/custom/Navbar";
-import Superstars from "@/components/custom/superstars/superstars";
+import Superstars from "@/components/custom/superstars/Superstars";
 
 const Main = () => {
   return (

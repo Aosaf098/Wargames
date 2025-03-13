@@ -1,15 +1,18 @@
-import { Button } from "../ui/button";
-import Marquee from "react-fast-marquee";
-import wwe from "../../../public/assets/wwe.webp";
+import { Button } from "../../ui/button";
+import wwe from "../../../../public/assets/wwe.webp";
 import { useContext } from "react";
 import { HomeContext } from "@/Provider/HomeProvider";
+import SlidingSuperstars from "./SlidingSuperstars";
 
 const Hero = () => {
-    
-  const {superstars} = useContext(HomeContext)
+  const { superstars } = useContext(HomeContext);
 
-  const topFiveSuperstars = superstars.filter((topFive) => topFive.topSix === true)
-  const nextFiveSuperstars = superstars.filter((NextFive) => NextFive.topSix === false)
+  const topFiveSuperstars = superstars.filter(
+    (topFive) => topFive.topSix === true
+  );
+  const nextFiveSuperstars = superstars.filter(
+    (NextFive) => NextFive.topSix === false
+  );
 
   return (
     <>
@@ -37,39 +40,17 @@ const Hero = () => {
             action. It’s a glorious testament to resilience, where legends are
             forged in a relentless storm of combat!.
           </p>
-          <Button className="w-1/4 p-6">Learn More</Button>
+          <Button className="w-1/4 p-6">Claim Free Credits</Button>
         </div>
         <div className="w-1/2 h-full p-6 flex flex-col gap-6 rounded-2xl">
-          <div className="w-full h-1/2">
-            <Marquee pauseOnHover={true}>
-              {topFiveSuperstars.map((superstar, idx) => (
-                <div className="w-72 aspect-square rounded-xl mx-8">
-                  <img
-                    className="w-full h-full object-cover rounded-2xl"
-                    key={idx}
-                    src={superstar.image}
-                    alt="Top Five Superstars Marquee"
-                  />
-                </div>
-              ))}
-            
-            </Marquee>
-          </div>
-          <div className="w-full h-1/2">
-          <Marquee direction="right" pauseOnHover={true}>
-              {nextFiveSuperstars.map((superstar, idx) => (
-                <div className="w-72 aspect-square rounded-xl mx-8">
-                  <img
-                    className="w-full h-full object-cover rounded-2xl"
-                    key={idx}
-                    src={superstar.image}
-                    alt="Next Five Superstars Marquee"
-                  />
-                </div>
-              ))}
-            
-            </Marquee>
-          </div>
+          <SlidingSuperstars
+            fiveSuperstars={topFiveSuperstars}
+            direction="left"
+          />
+          <SlidingSuperstars
+            fiveSuperstars={nextFiveSuperstars}
+            direction="right"
+          />
         </div>
       </div>
     </>

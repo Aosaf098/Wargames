@@ -2,6 +2,8 @@ import { createContext, ReactNode, useEffect, useState } from "react";
 
 interface HomeContextValue {
   superstars: SuperstarsInterface[];
+  freeCredits: number;
+  handleFreeCreditClaimButton: () => void
 }
 
 interface SuperstarsInterface {
@@ -18,9 +20,16 @@ interface SuperstarsInterface {
 
 export const HomeContext = createContext<HomeContextValue>({
   superstars: [],
+  freeCredits: 1000,
+  handleFreeCreditClaimButton: () => {}
 });
 const HomeProvider = ({ children }: { children: ReactNode }) => {
   const [superstars, setSuperstars] = useState<SuperstarsInterface[]>([]);
+  const [freeCredits, setFreeCredits] = useState<number>(1000)
+
+  const handleFreeCreditClaimButton = () => {
+    setFreeCredits(freeCredits + 100)
+  }
 
   useEffect(() => {
     const getSuperstars = async () => {
@@ -30,7 +39,7 @@ const HomeProvider = ({ children }: { children: ReactNode }) => {
     };
     getSuperstars();
   }, []);
-  const homeInfo = { superstars };
+  const homeInfo = { superstars, freeCredits, handleFreeCreditClaimButton };
   return (
     <>
       <HomeContext.Provider value={homeInfo}>{children}</HomeContext.Provider>

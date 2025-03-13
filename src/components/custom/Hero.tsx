@@ -13,10 +13,12 @@ import mcintyre from "../../../public/assets/mcintyre.png";
 import kevin from "../../../public/assets/kevin.png";
 
 const Hero = () => {
+    
   type SuperstarPhoto = {
     name: string;
     photo: any;
   }[];
+
   const topFiveSuperstars: SuperstarPhoto = [
     {
       name: "Cody Rhodes",

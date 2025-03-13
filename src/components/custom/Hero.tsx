@@ -1,68 +1,15 @@
 import { Button } from "../ui/button";
 import Marquee from "react-fast-marquee";
 import wwe from "../../../public/assets/wwe.webp";
-import cody from "../../../public/assets/cody.png";
-import cena from "../../../public/assets/cena.png";
-import reigns from "../../../public/assets/reigns.png";
-import punk from "../../../public/assets/punk.png";
-import randy from "../../../public/assets/randy.png";
-import jey from "../../../public/assets/jey.png";
-import styles from "../../../public/assets/styles.png";
-import seth from "../../../public/assets/seth.png";
-import mcintyre from "../../../public/assets/mcintyre.png";
-import kevin from "../../../public/assets/kevin.png";
+import { useContext } from "react";
+import { HomeContext } from "@/Provider/HomeProvider";
 
 const Hero = () => {
     
-  type SuperstarPhoto = {
-    name: string;
-    photo: any;
-  }[];
+  const {superstars} = useContext(HomeContext)
 
-  const topFiveSuperstars: SuperstarPhoto = [
-    {
-      name: "Cody Rhodes",
-      photo: cody,
-    },
-    {
-      name: "Roman Reigns",
-      photo: reigns,
-    },
-    {
-      name: "John Cena",
-      photo: cena,
-    },
-    {
-      name: "CM Punk",
-      photo: punk,
-    },
-    {
-      name: "Randy Orton",
-      photo: randy,
-    },
-  ];
-  const nextFiveSuperstars: SuperstarPhoto = [
-    {
-      name: "Seth Rollins",
-      photo: seth,
-    },
-    {
-      name: "Drew Mcintyre",
-      photo: mcintyre,
-    },
-    {
-      name: "Kevin Owens",
-      photo: kevin,
-    },
-    {
-      name: "Jey Uso",
-      photo: jey,
-    },
-    {
-      name: "AJ Styles",
-      photo: styles,
-    },
-  ];
+  const topFiveSuperstars = superstars.filter((topFive) => topFive.topSix === true)
+  const nextFiveSuperstars = superstars.filter((NextFive) => NextFive.topSix === false)
 
   return (
     <>
@@ -100,7 +47,7 @@ const Hero = () => {
                   <img
                     className="w-full h-full object-cover rounded-2xl"
                     key={idx}
-                    src={superstar.photo}
+                    src={superstar.image}
                     alt="Top Five Superstars Marquee"
                   />
                 </div>
@@ -115,7 +62,7 @@ const Hero = () => {
                   <img
                     className="w-full h-full object-cover rounded-2xl"
                     key={idx}
-                    src={superstar.photo}
+                    src={superstar.image}
                     alt="Next Five Superstars Marquee"
                   />
                 </div>

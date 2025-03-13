@@ -8,7 +8,8 @@
       "weight": "101 kg",
       "nickname": "The American Nightmare",
       "price": 150,
-      "image": "./assets/cody.png"
+      "image": "./assets/cody.png",
+      "topSix": true
     },
     {
       "id": 2,
@@ -18,108 +19,120 @@
       "weight": "120 kg",
       "nickname": "The Tribal Chief",
       "price": 200,
-      "image": "./assets/reigns.png"
+      "image": "./assets/reigns.png",
+      "topSix": true
     },
     {
-      "id": 3,
+        "id": 3,
+        "name": "CM Punk",
+        "rating": 93,
+        "finisher": "GTS",
+        "weight": "99 kg",
+        "nickname": "The Best in the World",
+        "price": 190,
+        "image": "./assets/punk.png",
+        "topSix": true
+    },
+    {
+      "id": 4,
       "name": "Seth Rollins",
       "rating": 94,
       "finisher": "Curb Stomp",
       "weight": "98 kg",
       "nickname": "The Visionary",
       "price": 140,
-      "image": "./assets/seth.png"
+      "image": "./assets/seth.png",
+      "topSix": true
     },
     {
-      "id": 4,
+      "id": 5,
       "name": "Randy Orton",
       "rating": 91,
       "finisher": "RKO",
       "weight": "113 kg",
       "nickname": "The Viper",
       "price": 180,
-      "image": "./assets/randy.png"
+      "image": "./assets/randy.png",
+      "topSix": true
     },
     {
-      "id": 5,
+      "id": 6,
       "name": "Drew McIntyre",
       "rating": 89,
       "finisher": "Claymore",
       "weight": "125 kg",
       "nickname": "The Scottish Warrior",
       "price": 130,
-      "image": "./assets/mcintyre.png"
+      "image": "./assets/mcintyre.png",
+      "topSix": false
     },
     {
-      "id": 6,
+      "id": 7,
       "name": "John Cena",
       "rating": 93,
       "finisher": "Attitude Adjustment",
       "weight": "114 kg",
       "nickname": "The Champ",
       "price": 250,
-      "image": "./assets/cena.png"
+      "image": "./assets/cena.png",
+      "topSix": true
     },
     {
-      "id": 7,
+      "id": 8,
       "name": "Brock Lesnar",
       "rating": 97,
       "finisher": "F5",
       "weight": "130 kg",
       "nickname": "The Beast",
       "price": 300,
-      "image": "./assets/lesnar.png"
+      "image": "./assets/lesnar.png",
+      "topSix": true
     },
     {
-      "id": 8,
+      "id": 9,
       "name": "AJ Styles",
       "rating": 92,
       "finisher": "Styles Clash",
       "weight": "99 kg",
       "nickname": "The Phenomenal One",
       "price": 160,
-      "image": "./assets/styles.png"
+      "image": "./assets/styles.png",
+      "topSix": false
     },
     {
-      "id": 9,
+      "id": 10,
       "name": "Kevin Owens",
       "rating": 90,
       "finisher": "Stunner",
       "weight": "121 kg",
       "nickname": "The Prizefighter",
       "price": 145,
-      "image": "./assets/kevin.png"
+      "image": "./assets/kevin.png",
+      "topSix": false
     },
     {
-      "id": 10,
+      "id": 11,
       "name": "Finn Balor",
       "rating": 91,
       "finisher": "Coup de Grace",
       "weight": "86 kg",
       "nickname": "The Demon",
       "price": 135,
-      "image": "./assets/balor.png"
+      "image": "./assets/balor.png",
+      "topSix": false
     },
     {
-      "id": 11,
+      "id": 12,
       "name": "Jey Uso",
       "rating": 89,
       "finisher": "Uso Splash",
       "weight": "104 kg",
       "nickname": "Main Event Jey",
       "price": 125,
-      "image": "./assets/jey.png"
+      "image": "./assets/jey.png",
+      "topSix": false
     },
-    {
-      "id": 12,
-      "name": "CM Punk",
-      "rating": 93,
-      "finisher": "GTS",
-      "weight": "99 kg",
-      "nickname": "The Best in the World",
-      "price": 190,
-      "image": "./assets/punk.png"
-    },
+    
     {
       "id": 13,
       "name": "Gunther",
@@ -128,7 +141,8 @@
       "weight": "135 kg",
       "nickname": "The Ring General",
       "price": 175,
-      "image": "./assets/gunther.png"
+      "image": "./assets/gunther.png",
+      "topSix": false
     },
     {
       "id": 14,
@@ -138,6 +152,7 @@
       "weight": "96 kg",
       "nickname": "The Underdog",
       "price": 120,
-      "image": "./assets/sami.png"
+      "image": "./assets/sami.png",
+      "topSix": false
     }
   ]

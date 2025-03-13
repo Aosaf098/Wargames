@@ -64,7 +64,7 @@
       "nickname": "The Scottish Warrior",
       "price": 130,
       "image": "./assets/mcintyre.png",
-      "topSix": false
+      "topSix": true
     },
     {
       "id": 7,
@@ -154,5 +154,27 @@
       "price": 120,
       "image": "./assets/sami.png",
       "topSix": false
-    }
+    },
+    {
+        "id": 15,
+        "name": "Damian Priest",
+        "rating": 90,
+        "finisher": "South of Heaven",
+        "weight": "113 kg",
+        "nickname": "Street King",
+        "price": 120,
+        "image": "./assets/priest.png",
+        "topSix": false
+      },
+      {
+        "id": 16,
+        "name": "LA Knight",
+        "rating": 89,
+        "finisher": "BFT",
+        "weight": "108 kg",
+        "nickname": "The Megastar",
+        "price": 120,
+        "image": "./assets/knight.png",
+        "topSix": false
+      }
   ]

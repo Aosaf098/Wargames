@@ -20,7 +20,7 @@ interface SuperstarsInterface {
 
 export const HomeContext = createContext<HomeContextValue>({
   superstars: [],
-  freeCredits: 1000,
+  freeCredits: 0,
   handleFreeCreditClaimButton: () => {}
 });
 const HomeProvider = ({ children }: { children: ReactNode }) => {
@@ -28,7 +28,7 @@ const HomeProvider = ({ children }: { children: ReactNode }) => {
   const [freeCredits, setFreeCredits] = useState<number>(1000)
 
   const handleFreeCreditClaimButton = () => {
-    setFreeCredits(freeCredits + 100)
+    freeCredits < 2000 ? setFreeCredits(freeCredits + 100) : alert(`You can't add more than that`)
   }
 
   useEffect(() => {

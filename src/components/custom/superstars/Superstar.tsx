@@ -28,11 +28,11 @@ const Superstar = ({ superstar }: SuperstarProps) => {
     superstar;
   return (
     <>
-      <Card className="w-3/4">
+      <Card className="w-4/5">
         <CardHeader>
           <div>
             <img
-              className="w-72 mx-auto rounded-lg object-cover"
+              className="w-[20rem] mx-auto rounded-lg object-cover hover:scale-105 hover:duration-100 hover:ease-in"
               src={image}
               alt=""
             />
@@ -40,14 +40,18 @@ const Superstar = ({ superstar }: SuperstarProps) => {
         </CardHeader>
         <CardDescription className="flex items-center justify-between lg:px-10">
           <div>
-            <h3 className="text-lg font-semibold">{name}</h3>
+            <h3 className="text-lg font-black">{name}</h3>
             <p className="text-sm font-medium italic">{nickname}</p>
           </div>
           <div>
-            <img className="w-14 aspect-square rounded-full object-cover" src={icon} alt="" />
+            <img
+              className="w-14 aspect-square rounded-full object-cover"
+              src={icon}
+              alt=""
+            />
           </div>
         </CardDescription>
-        <CardContent>
+        <CardContent className="*:font-bold">
           <div className="flex gap-2 lg:px-4 w-72 text-gray-6">
             <span className="w-16">Finisher</span>
             <span>:</span>
@@ -71,7 +75,7 @@ const Superstar = ({ superstar }: SuperstarProps) => {
           </div>
         </CardContent>
         <CardFooter className="mx-auto my-2">
-          <Button className="p-6 cursor-pointer" variant="outline">
+          <Button className="p-6 cursor-pointer" variant="destructive">
             Select
           </Button>
         </CardFooter>

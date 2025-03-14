@@ -58,7 +58,7 @@ const Superstar = ({ superstar }: SuperstarProps) => {
           </div>
         </CardDescription>
         <CardContent className="*:font-bold">
-          <div className="flex gap-2 lg:px-4 w-72 text-gray-6">
+          <div className="flex gap-2 lg:px-4 w-96 text-gray-6">
             <span className="w-16">Finisher</span>
             <span>:</span>
             <span>{finisher}</span>
@@ -82,7 +82,7 @@ const Superstar = ({ superstar }: SuperstarProps) => {
         </CardContent>
         <CardFooter className="mx-auto my-2">
           <Button
-            onClick={() => handleSelectedRoster(superstar)}
+            onClick={() => handleSelectedRoster(superstar, price)}
             className="p-6 cursor-pointer"
             variant="destructive"
           >

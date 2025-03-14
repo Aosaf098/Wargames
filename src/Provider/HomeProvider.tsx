@@ -5,7 +5,7 @@ interface HomeContextValue {
   freeCredits: number;
   handleFreeCreditClaimButton: () => void;
   selectedRoster: SuperstarsInterface[];
-  handleSelectedRoster: (param: SuperstarsInterface) => void;
+  handleSelectedRoster: (param: SuperstarsInterface, param2: number) => void;
 }
 
 interface SuperstarsInterface {
@@ -41,12 +41,25 @@ const HomeProvider = ({ children }: { children: ReactNode }) => {
       : alert(`You can't add more than that`);
   };
 
-  const handleSelectedRoster = (superstar: SuperstarsInterface) => {
-    
-    selectedRoster.length < 5
-      ? setSelectedRoster((prevRoster) => [...prevRoster, superstar])
-      : alert("Roster is Full");
-    alert('Successfully Added')
+  const handleSelectedRoster = (
+    superstar: SuperstarsInterface,
+    price: number
+  ) => {
+    if (selectedRoster.length < 5) {
+      if (freeCredits > price) {
+        if (!(selectedRoster.some((single) => single.name === superstar.name))) {
+          setSelectedRoster((prevRoster) => [...prevRoster, superstar]);
+          setFreeCredits(freeCredits - price);
+          alert("Successfully Added");
+        } else {
+          alert("Already Selected");
+        }
+      } else {
+        alert("Claim Some Free Credits");
+      }
+    } else {
+      alert("Roster Full");
+    }
   };
   console.log("Selected Roster List:", selectedRoster);
   useEffect(() => {

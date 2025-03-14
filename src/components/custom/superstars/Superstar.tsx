@@ -6,6 +6,8 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
+import { HomeContext } from "@/Provider/HomeProvider";
+import { useContext } from "react";
 
 interface SuperstarsInterface {
   id: number;
@@ -16,14 +18,18 @@ interface SuperstarsInterface {
   nickname: string;
   price: number;
   image: string;
+  topSix: boolean;
   icon: string;
 }
 
 interface SuperstarProps {
   superstar: SuperstarsInterface;
+  // handleSelectedRoster: (param: SuperstarsInterface) => void
 }
 
 const Superstar = ({ superstar }: SuperstarProps) => {
+  const { handleSelectedRoster } = useContext(HomeContext);
+  
   const { name, image, rating, finisher, weight, nickname, price, icon } =
     superstar;
   return (
@@ -75,7 +81,11 @@ const Superstar = ({ superstar }: SuperstarProps) => {
           </div>
         </CardContent>
         <CardFooter className="mx-auto my-2">
-          <Button className="p-6 cursor-pointer" variant="destructive">
+          <Button
+            onClick={() => handleSelectedRoster(superstar)}
+            className="p-6 cursor-pointer"
+            variant="destructive"
+          >
             Select
           </Button>
         </CardFooter>

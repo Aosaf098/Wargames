@@ -9,6 +9,7 @@ interface SuperstarsInterface {
   price: number;
   image: string;
   topSix: boolean;
+  icon: string;
 }
 
 interface SlidingSuperstarsProps {

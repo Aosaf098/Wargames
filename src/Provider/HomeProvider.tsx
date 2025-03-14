@@ -15,7 +15,8 @@ interface SuperstarsInterface {
   nickname: string;
   price: number;
   image: string;
-  topSix: boolean
+  topSix: boolean;
+  icon: string
 }
 
 export const HomeContext = createContext<HomeContextValue>({

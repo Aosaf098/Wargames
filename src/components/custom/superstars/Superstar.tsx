@@ -16,6 +16,7 @@ interface SuperstarsInterface {
   nickname: string;
   price: number;
   image: string;
+  icon: string;
 }
 
 interface SuperstarProps {
@@ -23,7 +24,8 @@ interface SuperstarProps {
 }
 
 const Superstar = ({ superstar }: SuperstarProps) => {
-  const { name, image, rating, finisher, weight, nickname, price } = superstar;
+  const { name, image, rating, finisher, weight, nickname, price, icon } =
+    superstar;
   return (
     <>
       <Card className="w-3/4">
@@ -36,9 +38,14 @@ const Superstar = ({ superstar }: SuperstarProps) => {
             />
           </div>
         </CardHeader>
-        <CardDescription>
-          <h3 className="text-lg lg:px-10 font-semibold">{name}</h3>
-          <p className="text-sm lg:px-10 font-medium italic">{nickname}</p>
+        <CardDescription className="flex items-center justify-between lg:px-10">
+          <div>
+            <h3 className="text-lg font-semibold">{name}</h3>
+            <p className="text-sm font-medium italic">{nickname}</p>
+          </div>
+          <div>
+            <img className="w-14 aspect-square rounded-full object-cover" src={icon} alt="" />
+          </div>
         </CardDescription>
         <CardContent>
           <div className="flex gap-2 lg:px-4 w-72 text-gray-6">
@@ -64,7 +71,9 @@ const Superstar = ({ superstar }: SuperstarProps) => {
           </div>
         </CardContent>
         <CardFooter className="mx-auto my-2">
-            <Button className="p-6 cursor-pointer" variant='outline'>Select</Button>
+          <Button className="p-6 cursor-pointer" variant="outline">
+            Select
+          </Button>
         </CardFooter>
       </Card>
     </>

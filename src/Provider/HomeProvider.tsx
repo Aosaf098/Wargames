@@ -1,10 +1,11 @@
-import { createContext, ReactNode, useEffect, useState } from "react";
+import { createContext, Dispatch, ReactNode, SetStateAction, useEffect, useState } from "react";
 
 interface HomeContextValue {
   superstars: SuperstarsInterface[];
   freeCredits: number;
   handleFreeCreditClaimButton: () => void;
   selectedRoster: SuperstarsInterface[];
+  setSelectedRoster: Dispatch<SetStateAction<SuperstarsInterface[]>>;
   handleSelectedRoster: (param: SuperstarsInterface, param2: number) => void;
 }
 
@@ -26,6 +27,7 @@ export const HomeContext = createContext<HomeContextValue>({
   freeCredits: 0,
   handleFreeCreditClaimButton: () => {},
   selectedRoster: [],
+  setSelectedRoster: () => {},
   handleSelectedRoster: () => {},
 });
 const HomeProvider = ({ children }: { children: ReactNode }) => {
@@ -75,6 +77,7 @@ const HomeProvider = ({ children }: { children: ReactNode }) => {
     freeCredits,
     handleFreeCreditClaimButton,
     selectedRoster,
+    setSelectedRoster,
     handleSelectedRoster,
   };
   return (

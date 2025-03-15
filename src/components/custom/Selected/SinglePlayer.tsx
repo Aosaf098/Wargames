@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
+import { HomeContext } from "@/Provider/HomeProvider";
 import { Trash } from "lucide-react";
+import { useContext } from "react";
 
 interface SuperstarsInterface {
   id: number;
@@ -17,7 +19,15 @@ interface SuperstarProps {
   singlePlayer: SuperstarsInterface;
 }
 const SinglePlayer = ({ singlePlayer }: SuperstarProps) => {
-  const { name, image, nickname } = singlePlayer;
+  const { id, name, image, nickname } = singlePlayer;
+
+  const {selectedRoster, setSelectedRoster} = useContext(HomeContext)
+
+  const handleDelete = (id: number) => {
+    console.log(`${id} is selected`)
+    const remainingRoster = selectedRoster.filter((deleteItem) => deleteItem.id !== id)
+    setSelectedRoster(remainingRoster)
+  }
   return (
     <>
       <div className="h-[200px] flex items-center justify-between gap-4 px-10 bg-accent rounded-xl">
@@ -29,7 +39,7 @@ const SinglePlayer = ({ singlePlayer }: SuperstarProps) => {
           </div>
         </div>
         <div>
-            <Button variant='destructive'><Trash /></Button>
+            <Button onClick={() => handleDelete(id)} variant='destructive'><Trash /></Button>
         </div>
       </div>
     </>

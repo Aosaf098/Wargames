@@ -3,13 +3,20 @@ import { useContext, useState } from "react";
 import Superstar from "./Superstar";
 import { HomeContext } from "@/Provider/HomeProvider";
 import SelectedRoster from "../Selected/SelectedRoster";
-import wwe from "../../../../public/assets/wwe.webp"
+import wwe from "../../../../public/assets/wwe.webp";
 
 const Superstars = () => {
   const { superstars, selectedRoster } = useContext(HomeContext);
 
   const [isAvailable, setIsAvailable] = useState<boolean>(true);
   const [isSelected, setIsSelected] = useState<boolean>(false);
+  const [displayCards, setDisplayCards] = useState<number>(6);
+
+  const handleSeeMore = () => {
+    displayCards === 6
+      ? setDisplayCards(superstars.length)
+      : setDisplayCards(6);
+  };
 
   const handleisAvailable = () => {
     setIsAvailable(true);
@@ -21,7 +28,6 @@ const Superstars = () => {
     setIsAvailable(false);
   };
 
-  console.log("Superstars:", superstars);
   return (
     <>
       <div className="w-3/4 mx-auto">
@@ -55,12 +61,22 @@ const Superstars = () => {
         </div>
         {isAvailable && (
           <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 justify-items-center">
-            {superstars.map((superstar) => (
+            {superstars?.slice(0, displayCards).map((superstar) => (
               <Superstar key={superstar?.id} superstar={superstar} />
             ))}
           </div>
         )}
-
+        {superstars.length > 6 && (
+          <div className="flex items-center justify-center mt-20">
+            <Button
+              onClick={handleSeeMore}
+              className="p-6 w-1/5"
+              variant="destructive"
+            >
+              {displayCards === 6 ? 'Show More' : 'Show Less'}
+            </Button>
+          </div>
+        )}
         {isSelected &&
           (selectedRoster.length > 0 ? (
             <SelectedRoster />

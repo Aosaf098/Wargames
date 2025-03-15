@@ -63,7 +63,6 @@ const HomeProvider = ({ children }: { children: ReactNode }) => {
       alert("Roster Full");
     }
   };
-  console.log("Selected Roster List:", selectedRoster);
   useEffect(() => {
     const getSuperstars = async () => {
       const response = await fetch("/superstars.json");

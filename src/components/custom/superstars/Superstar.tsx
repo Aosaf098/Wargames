@@ -24,7 +24,6 @@ interface SuperstarsInterface {
 
 interface SuperstarProps {
   superstar: SuperstarsInterface;
-  // handleSelectedRoster: (param: SuperstarsInterface) => void
 }
 
 const Superstar = ({ superstar }: SuperstarProps) => {

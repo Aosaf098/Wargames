@@ -24,7 +24,6 @@ const SinglePlayer = ({ singlePlayer }: SuperstarProps) => {
   const {selectedRoster, setSelectedRoster} = useContext(HomeContext)
 
   const handleDelete = (id: number) => {
-    console.log(`${id} is selected`)
     const remainingRoster = selectedRoster.filter((deleteItem) => deleteItem.id !== id)
     setSelectedRoster(remainingRoster)
   }

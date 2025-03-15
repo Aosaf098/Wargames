@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import Superstar from "./Superstar";
 import { HomeContext } from "@/Provider/HomeProvider";
 import SelectedRoster from "../Selected/SelectedRoster";
+import wwe from "../../../../public/assets/wwe.webp"
 
 const Superstars = () => {
   const { superstars, selectedRoster } = useContext(HomeContext);
@@ -12,12 +13,12 @@ const Superstars = () => {
 
   const handleisAvailable = () => {
     setIsAvailable(true);
-    setIsSelected(false)
+    setIsSelected(false);
   };
 
   const handleisSelected = () => {
     setIsSelected(true);
-    setIsAvailable(false)
+    setIsAvailable(false);
   };
 
   console.log("Superstars:", superstars);
@@ -32,16 +33,24 @@ const Superstars = () => {
         <div className="flex items-center justify-between gap-6 my-8 px-12">
           <div>
             <h1 className="text-4xl font-black italic text-muted-foreground">
-              {
-                isAvailable ? 'Roster' : 'Selected'
-              }
+              {isAvailable ? "Roster" : "Selected"}
             </h1>
           </div>
           <div className="flex items-center gap-6">
-          <Button variant={isAvailable ? 'destructive' : 'default'} onClick={handleisAvailable} className="p-6">
-            Available
-          </Button>
-          <Button variant={isSelected ? 'destructive' : 'default'}  onClick={handleisSelected} className="p-6">Selected</Button>
+            <Button
+              variant={isAvailable ? "destructive" : "default"}
+              onClick={handleisAvailable}
+              className="p-6"
+            >
+              Available
+            </Button>
+            <Button
+              variant={isSelected ? "destructive" : "default"}
+              onClick={handleisSelected}
+              className="p-6"
+            >
+              Selected
+            </Button>
           </div>
         </div>
         {isAvailable && (
@@ -51,15 +60,18 @@ const Superstars = () => {
             ))}
           </div>
         )}
-        {
-          (isSelected && selectedRoster.length > 0) ? (
+
+        {isSelected &&
+          (selectedRoster.length > 0 ? (
             <SelectedRoster />
           ) : (
-            <div className="w-11/12 mx-auto mt-24 space-y-4 p-32">
-              <h1 className="text-7xl text-center font-black text-muted-foreground">You Haven't Selected Anyone Yet</h1>
+            <div className="w-11/12 mx-auto mt-24 flex items-center flex-col justify-center gap-8 p-32">
+              <img className="w-48" src={wwe} alt="" />
+              <h1 className="text-7xl text-center font-black text-muted-foreground">
+                You Haven't Selected Anyone Yet
+              </h1>
             </div>
-          )
-        }
+          ))}
       </div>
     </>
   );

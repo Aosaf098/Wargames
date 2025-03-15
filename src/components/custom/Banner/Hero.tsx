@@ -30,7 +30,7 @@ const Hero = () => {
               alt=""
             />
           </div>
-          <p className="text-justify w-[85%] text-sm">
+          <p className="text-justify w-[85%] text-sm text-muted-foreground">
             WWE WarGames is the ultimate battleground where superstars collide
             in a chaotic, steel-caged spectacle. For this epic showdown, you can
             assemble a powerhouse team. Here, two teams clash inside a brutal,

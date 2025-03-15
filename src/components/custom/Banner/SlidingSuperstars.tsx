@@ -22,7 +22,7 @@ const SlidingSuperstars = ({ fiveSuperstars, direction }: SlidingSuperstarsProps
       <div className="w-full h-1/2">
         <Marquee pauseOnHover={true} direction={direction}>
           {fiveSuperstars.map((superstar, idx) => (
-            <div className="w-72 aspect-square rounded-xl mx-8">
+            <div className="lg:w-72 w-48 aspect-square rounded-xl mx-8">
               <img
                 className="w-full h-full object-cover rounded-2xl"
                 key={idx}

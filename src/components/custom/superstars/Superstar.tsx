@@ -33,7 +33,7 @@ const Superstar = ({ superstar }: SuperstarProps) => {
     superstar;
   return (
     <>
-      <Card className="w-4/5">
+      <Card className="w-4/5 md:w-11/12 lg:w-4/5">
         <CardHeader>
           <div>
             <img
@@ -43,7 +43,7 @@ const Superstar = ({ superstar }: SuperstarProps) => {
             />
           </div>
         </CardHeader>
-        <CardDescription className="flex items-center justify-between lg:px-10">
+        <CardDescription className="flex items-center justify-between lg:px-10 px-6">
           <div>
             <h3 className="text-lg font-black">{name}</h3>
             <p className="text-sm font-medium italic">{nickname}</p>

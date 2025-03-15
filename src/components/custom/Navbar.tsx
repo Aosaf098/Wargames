@@ -7,12 +7,12 @@ const Navbar = () => {
   const {freeCredits} = useContext(HomeContext)
   return (
     <>
-      <div className="w-3/4 mx-auto flex items-center justify-around p-2">
-        <div>
+      <div className="sm:w-3/4 md:w-full mx-auto flex items-center justify-around p-2">
+        <div className="hidden lg:block">
           <ModeToggle />
         </div>
         <div>
-          <img className="w-40" src={mainlogo} alt="" />
+          <img className="lg:w-40 w-32" src={mainlogo} alt="" />
         </div>
         <div className="border border-solid border-gray-100 rounded-lg p-1 flex items-center gap-3">
           <h6 className="text-lg font-semibold">$ {freeCredits}</h6>

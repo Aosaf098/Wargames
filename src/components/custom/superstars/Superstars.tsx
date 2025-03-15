@@ -30,15 +30,15 @@ const Superstars = () => {
 
   return (
     <>
-      <div className="w-3/4 mx-auto">
+      <div className="lg:w-3/4 md:w-11/12 mx-auto">
         <div className="flex items-center justify-center">
-          <span className="text-5xl font-bold bg-red-500 px-8 py-2 rounded-sm">
+          <span className="lg:text-5xl md:text-3xl text-2xl font-bold bg-red-500 px-8 py-2 rounded-sm">
             Superstars
           </span>
         </div>
-        <div className="flex items-center justify-between gap-6 my-8 px-12">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 my-8 px-12">
           <div>
-            <h1 className="text-4xl font-black italic text-muted-foreground">
+            <h1 className="lg:text-4xl text-2xl font-black italic text-muted-foreground">
               {isAvailable ? "Roster" : "Selected"}
             </h1>
           </div>
@@ -66,11 +66,11 @@ const Superstars = () => {
             ))}
           </div>
         )}
-        {superstars.length > 6 && (
+        {(superstars.length > 6 && isAvailable) && (
           <div className="flex items-center justify-center mt-20">
             <Button
               onClick={handleSeeMore}
-              className="p-6 w-1/5"
+              className="p-6 sm:w-1/5"
               variant="destructive"
             >
               {displayCards === 6 ? 'Show More' : 'Show Less'}

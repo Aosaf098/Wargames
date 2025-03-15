@@ -28,7 +28,7 @@ const Footer = () => {
   ];
   return (
     <>
-      <footer className="py-16 md:py-32">
+      <footer className="pt-20 pb-10">
         <div className="mx-auto max-w-5xl px-6">
           <a aria-label="go home" className="mx-auto block size-fit">
             <img className="w-32" src={logo} alt="" />
